@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Link from "next/link";
-import { withRouter } from "next/router";
-import SVG from "react-inlinesvg";
-import styles from "./Header.module.css";
-import HamburgerIcon from "./icons/Hamburger";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
+import { withRouter } from 'next/router';
+import SVG from 'react-inlinesvg';
+import styles from './Header.module.css';
+import HamburgerIcon from './icons/Hamburger';
 
 class Header extends Component {
   state = { showNav: false };
@@ -36,12 +36,12 @@ class Header extends Component {
 
   componentDidMount() {
     const { router } = this.props;
-    router.events.on("routeChangeComplete", this.hideMenu);
+    router.events.on('routeChangeComplete', this.hideMenu);
   }
 
   componentWillUnmount() {
     const { router } = this.props;
-    router.events.off("routeChangeComplete", this.hideMenu);
+    router.events.off('routeChangeComplete', this.hideMenu);
   }
 
   hideMenu = () => {
@@ -60,7 +60,7 @@ class Header extends Component {
       return null;
     }
 
-    if (logo.asset.extension === "svg") {
+    if (logo.asset.extension === 'svg') {
       return <SVG src={logo.asset.url} className={styles.logo} />;
     }
 
@@ -68,7 +68,7 @@ class Header extends Component {
   };
 
   render() {
-    const { title = "Missing title", navItems, router, logo } = this.props;
+    const { title = 'Missing title', navItems, router, logo } = this.props;
     const { showNav } = this.state;
 
     return (
@@ -77,9 +77,9 @@ class Header extends Component {
           <h1 className={styles.branding}>
             <Link
               href={{
-                pathname: "/LandingPage",
+                pathname: '/LandingPage',
                 query: {
-                  slug: "/",
+                  slug: '/',
                 },
               }}
               as="/"
@@ -94,26 +94,26 @@ class Header extends Component {
                 navItems.map((item) => {
                   const { slug, title, _id } = item;
                   const isActive =
-                    router.pathname === "/LandingPage" && router.query.slug === slug.current;
+                    router.pathname === '/LandingPage' && router.query.slug === slug.current;
                   return (
                     <li key={_id} className={styles.navItem}>
                       <Link
                         href={{
-                          pathname: "/LandingPage",
+                          pathname: '/LandingPage',
                           query: { slug: slug.current },
                         }}
                         as={`/${slug.current}`}
                         prefetch
                       >
-                        <a data-is-active={isActive ? "true" : "false"}>{title}</a>
+                        <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
                       </Link>
                     </li>
                   );
                 })}
             </ul>
-            <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
+            {/* <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
               <HamburgerIcon className={styles.hamburgerIcon} />
-            </button>
+            </button> */}
           </nav>
         </div>
       </div>
