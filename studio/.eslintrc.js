@@ -1,11 +1,11 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   extends: ['standard', 'standard-react'],
   parser: 'babel-eslint',
   rules: {
     'react/prop-types': 0,
-    'object-curly-spacing': ['error', 'never']
+    semi: false
   },
   settings: {
     react: {
@@ -13,4 +13,4 @@ module.exports = {
       version: '16.8.6'
     }
   }
-}
+};

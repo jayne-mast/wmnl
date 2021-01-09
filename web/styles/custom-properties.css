@@ -2,7 +2,7 @@
   --wide-container: 60rem;
   --narrow-container: 40rem;
 
-  --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-sans: Gotham, -apple-system, BlinkMacSystemFont, sans-serif;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
@@ -10,7 +10,8 @@
   --color-light-gray: #b4bcc7;
   --color-very-light-gray: #e7ebed;
   --color-white: #fff;
-  --color-accent: #156dff;
+  --color-primary: #ff3d96;
+  --color-accent: #030059;
 
   /* Typography */
   --unit: 16;

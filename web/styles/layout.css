@@ -9,7 +9,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   background: var(--color-white);
-  color: var(--color-black);
+  color: var(--color-accent);
   margin: 0;
 }
 
@@ -22,4 +22,32 @@ body,
 
 :global(.content) {
   min-height: calc(100% - 84px - 218px);
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/static/GothamMedium.woff2') format('woff2'),
+    url('/static/GothamMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/static/GothamMediumItalic.woff2') format('woff2'),
+    url('/static/GothamMediumItalic.woff') format('woff');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/static/GothamBold.woff2') format('woff2'),
+    url('/static/GothamBold.woff') format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/static/GothamBoldItalic.woff2') format('woff2'),
+    url('/static/GothamBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
 }

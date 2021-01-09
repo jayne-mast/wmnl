@@ -8,7 +8,7 @@
 }
 
 .container {
-  margin: 0 1rem;
+  background-color: var(--color-primary);
 
   @media (--typography-breakpoint) {
     margin: 0;

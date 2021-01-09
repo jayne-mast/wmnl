@@ -1,4 +1,4 @@
-@import "../../styles/custom-media.css";
+@import '../../styles/custom-media.css';
 @import '../../styles/custom-properties.css';
 
 .root {
@@ -8,18 +8,6 @@
   @media (--media-min-medium) {
     padding: 4rem 0;
   }
-}
-
-.label {
-  font-size: var(--font-micro-size);
-  line-height: var(--font-micro-line-height);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-top: 1em;
-}
-
-.label + .title {
-  margin-top: 0.2em;
 }
 
 .title {
