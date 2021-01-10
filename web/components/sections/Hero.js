@@ -4,33 +4,34 @@ import imageUrlBuilder from '@sanity/image-url';
 import styles from './Hero.module.css';
 import client from '../../client';
 import SimpleBlockContent from '../SimpleBlockContent';
-import Cta from '../Cta';
+import { getColorFromBgColor } from '../../utils';
+
+const builder = imageUrlBuilder(client);
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 
 function Hero(props) {
-  const { heading, backgroundImage, tagline, ctas } = props;
+  const { heading, image, alt, text, backgroundColor } = props;
 
-  const style = backgroundImage
-    ? {
-        backgroundImage: `url("${urlFor(backgroundImage).width(2000).auto('format').url()}")`,
-      }
-    : {};
+  const style = {
+    backgroundColor,
+    color: getColorFromBgColor(backgroundColor),
+  };
 
   return (
     <div className={styles.root} style={style}>
+      <div className={styles.imageWrapper}>
+        <img
+          src={builder.image(image).auto('format').width(2000).url()}
+          className={styles.image}
+          alt={alt}
+        />
+      </div>
       <div className={styles.content}>
         <h1 className={styles.title}>{heading}</h1>
-        <div className={styles.tagline}>{tagline && <SimpleBlockContent blocks={tagline} />}</div>
-        {ctas && (
-          <div className={styles.ctas}>
-            {ctas.map((cta) => (
-              <Cta {...cta} key={cta._key} />
-            ))}
-          </div>
-        )}
+        <div className={styles.text}>{text && <SimpleBlockContent blocks={text} />}</div>
       </div>
     </div>
   );
@@ -38,9 +39,10 @@ function Hero(props) {
 
 Hero.propTypes = {
   heading: PropTypes.string,
-  backgroundImage: PropTypes.object,
-  tagline: PropTypes.array,
-  ctas: PropTypes.arrayOf(PropTypes.object),
+  image: PropTypes.object,
+  alt: PropTypes.string,
+  text: PropTypes.array,
+  backgroundColor: PropTypes.string,
 };
 
 export default Hero;

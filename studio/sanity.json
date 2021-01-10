@@ -17,11 +17,14 @@
     "dashboard-widget-structure-menu",
     "dashboard-widget-document-list",
     "dashboard-widget-netlify",
-    "@sanity/vision"
+    "@sanity/vision",
+    "color-list"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"],
+      "plugins": [
+        "@sanity/vision"
+      ],
       "api": {
         "dataset": "development"
       }

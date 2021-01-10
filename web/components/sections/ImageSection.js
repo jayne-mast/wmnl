@@ -4,32 +4,34 @@ import imageUrlBuilder from '@sanity/image-url';
 import styles from './ImageSection.module.css';
 import client from '../../client';
 import SimpleBlockContent from '../SimpleBlockContent';
-import Cta from '../Cta';
+import { getColorFromBgColor } from '../../utils';
 
 const builder = imageUrlBuilder(client);
 
 function ImageSection(props) {
-  const { heading, text, image, cta } = props;
+  const { heading, text, image, alt, imagePosition, backgroundColor } = props;
 
   if (!image) {
     return null;
   }
 
+  const style = {
+    backgroundColor,
+    color: getColorFromBgColor(backgroundColor),
+  };
+
   return (
-    <div className={styles.root}>
+    <div className={styles.root} style={style}>
       <figure className={styles.content}>
         <img
           src={builder.image(image).auto('format').width(2000).url()}
           className={styles.image}
-          alt={heading}
+          alt={alt}
         />
         <figcaption>
           <div className={styles.caption}>
-            <div className={styles.captionBox}>
-              <h2 className={styles.title}>{heading}</h2>
-              {text && <SimpleBlockContent blocks={text} />}
-              {cta && cta.route && <Cta {...cta} />}
-            </div>
+            <h2 className={styles.title}>{heading}</h2>
+            {text && <SimpleBlockContent blocks={text} />}
           </div>
         </figcaption>
       </figure>
@@ -45,9 +47,10 @@ ImageSection.propTypes = {
       _ref: PropTypes.string,
     }),
   }),
-  backgroundImage: PropTypes.string,
+  alt: PropTypes.string,
   tagline: PropTypes.string,
-  cta: PropTypes.object,
+  imagePosition: PropTypes.oneOf(['left', 'right']),
+  backgroundColor: PropTypes.string,
 };
 
 export default ImageSection;

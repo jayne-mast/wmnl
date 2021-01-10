@@ -25,11 +25,11 @@ export default () =>
         .icon(MdDashboard)
         .schemaType('page')
         .child(S.documentTypeList('page').title('Pages')),
-      S.listItem()
-        .title('Blog post')
-        .icon(FiFile)
-        .schemaType('blogPost')
-        .child(S.documentTypeList('blogPost').title('Blog post')),
+      // S.listItem()
+      //   .title('Blog post')
+      //   .icon(FiFile)
+      //   .schemaType('blogPost')
+      //   .child(S.documentTypeList('blogPost').title('Blog post')),
       S.listItem()
         .title('Routes')
         .schemaType('route')

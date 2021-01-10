@@ -10,18 +10,35 @@ export default {
     },
     {
       name: 'text',
-      type: 'simplePortableText',
+      type: 'portableText',
       title: 'Text'
     },
     {
       name: 'image',
-      type: 'figure',
-      title: 'Image'
+      type: 'image',
+      title: 'Image',
+      options: {
+        hotspot: true
+      }
     },
     {
-      name: 'cta',
-      type: 'cta',
-      title: 'Call to action'
+      name: 'alt',
+      type: 'string',
+      title: 'Alternative text',
+      description: 'Important for SEO and accessiblity.'
+    },
+    {
+      name: 'imagePosition',
+      type: 'string',
+      title: 'Image position',
+      options: {
+        list: ['left', 'right']
+      }
+    },
+    {
+      name: 'backgroundColor',
+      type: 'backgroundColor',
+      title: 'Background color'
     }
   ],
   preview: {
@@ -30,12 +47,12 @@ export default {
       subtitle: 'label',
       media: 'image'
     },
-    prepare({ heading, media }) {
+    prepare({ heading = 'No title', media }) {
       return {
-        title: `Image: ${heading}`,
+        title: heading,
         subtitle: 'Image section',
         media
-      }
+      };
     }
   }
-}
+};

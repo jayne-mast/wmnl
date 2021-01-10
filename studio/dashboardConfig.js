@@ -33,7 +33,7 @@ export default {
             value: 'https://github.com/jayne-mast/wmnl',
             category: 'Code'
           },
-          { title: 'Frontend', value: 'https://wmnl.netlify.app', category: 'apps' }
+          { title: 'Frontend', value: 'https://womensmarchnederland.nl', category: 'apps' }
         ]
       }
     },

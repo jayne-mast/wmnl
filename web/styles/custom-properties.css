@@ -2,7 +2,7 @@
   --wide-container: 60rem;
   --narrow-container: 40rem;
 
-  --font-family-sans: Gotham, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-sans: Raleway, -apple-system, BlinkMacSystemFont, sans-serif;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
@@ -28,12 +28,12 @@
   --font-title3-line-height: calc(30 / 21); /* 30px */
   --font-title2-size: calc(24 / var(--unit) * 1rem); /* 24px */
   --font-title2-line-height: calc(33 / 24); /* 33px */
-  --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
+  --font-title1-size: calc(52 / var(--unit) * 1rem); /* 52px */
   --font-title1-line-height: calc(57 / 49); /* 57px */
 
   /* Widths */
   --width-x-small: 20em;
-  --width-small: 40em;
+  --width-small: 42em;
   --width-medium: 60em;
   --width-large: 80em;
   --width-x-large: 100em;

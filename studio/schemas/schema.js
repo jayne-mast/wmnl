@@ -11,12 +11,12 @@ import siteConfig from './documents/siteConfig';
 import blogPost from './documents/blogPost';
 
 // Object types
-import cta from './objects/cta';
 import figure from './objects/figure';
 import internalLink from './objects/internalLink';
 import link from './objects/link';
 import portableText from './objects/portableText';
 import simplePortableText from './objects/simplePortableText';
+import backgroundColor from './objects/backgroundColor';
 
 // Landing page sections
 import hero from './objects/hero';
@@ -30,7 +30,6 @@ export default createSchema({
   // Then proceed to concatenate our our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    cta,
     figure,
     hero,
     imageSection,
@@ -43,6 +42,7 @@ export default createSchema({
     siteConfig,
     textSection,
     blogSection,
-    blogPost
+    blogPost,
+    backgroundColor
   ])
 });

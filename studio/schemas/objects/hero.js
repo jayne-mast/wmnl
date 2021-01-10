@@ -6,44 +6,44 @@ export default {
     {
       name: 'heading',
       type: 'string',
-      title: 'Heading',
+      title: 'Heading'
     },
     {
-      name: 'tagline',
+      name: 'text',
       type: 'simplePortableText',
-      title: 'Tagline',
+      title: 'Text'
     },
     {
-      name: 'backgroundImage',
+      name: 'image',
       type: 'image',
-      title: 'Background image',
+      title: 'image',
       options: {
-        hotspot: true,
-      },
+        hotspot: true
+      }
     },
     {
-      name: 'ctas',
-      type: 'array',
-      title: 'Call to actions',
-      of: [
-        {
-          title: 'Call to action',
-          type: 'cta',
-        },
-      ],
+      name: 'alt',
+      type: 'string',
+      title: 'Alternative text',
+      description: 'Important for SEO and accessiblity.'
     },
+    {
+      name: 'backgroundColor',
+      type: 'backgroundColor',
+      title: 'Background color'
+    }
   ],
   preview: {
     select: {
       title: 'heading',
-      media: 'backgroundImage',
+      media: 'image'
     },
-    prepare({ title, media }) {
+    prepare({ title = 'No title', media }) {
       return {
         title,
         subtitle: 'Hero section',
-        media,
+        media
       };
-    },
-  },
+    }
+  }
 };

@@ -1,4 +1,4 @@
-import bcp47 from 'bcp47'
+import bcp47 from 'bcp47';
 
 export default {
   name: 'site-config',
@@ -85,11 +85,6 @@ export default {
           to: [{ type: 'route' }]
         }
       ]
-    },
-    {
-      name: 'footerText',
-      type: 'simplePortableText',
-      fieldset: 'footer'
     }
   ]
-}
+};

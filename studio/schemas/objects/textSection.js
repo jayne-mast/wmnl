@@ -12,15 +12,20 @@ export default {
       name: 'text',
       type: 'portableText',
       title: 'Text'
+    },
+    {
+      name: 'backgroundColor',
+      type: 'backgroundColor',
+      title: 'Background color'
     }
   ],
   preview: {
     select: {
       heading: 'heading'
     },
-    prepare({ heading }) {
+    prepare({ heading = 'No title' }) {
       return {
-        title: `${heading}`,
+        title: heading,
         subtitle: 'Text section'
       };
     }
