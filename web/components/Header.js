@@ -88,10 +88,10 @@ class Header extends Component {
               <a title={title}>{this.renderLogo(logo)}</a>
             </Link>
           </h1>
-          <nav className={styles.nav}>
-            <ul className={styles.navItems}>
-              {navItems &&
-                navItems.map((item) => {
+          {navItems && (
+            <nav className={styles.nav}>
+              <ul className={styles.navItems}>
+                {navItems.map((item) => {
                   const { slug, title, _id } = item;
                   const isActive =
                     router.pathname === '/LandingPage' && router.query.slug === slug.current;
@@ -110,11 +110,12 @@ class Header extends Component {
                     </li>
                   );
                 })}
-            </ul>
-            {/* <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
-              <HamburgerIcon className={styles.hamburgerIcon} />
-            </button> */}
-          </nav>
+              </ul>
+              <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
+                <HamburgerIcon className={styles.hamburgerIcon} />
+              </button>
+            </nav>
+          )}
         </div>
       </div>
     );

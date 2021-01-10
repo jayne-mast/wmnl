@@ -7,7 +7,11 @@
   "scripts": {
     "build": "sanity build",
     "dev": "sanity start",
-    "test": "sanity check"
+    "test": "sanity check",
+    "backup-production": "sanity dataset export production prod.tar.gz",
+    "sync-datasets": "npm run backup-production && sanity dataset import prod.tar.gz development --replace && rm prod.tar.gz",
+    "clean-dev-dataset": "sanity dataset delete development && sanity dataset create development",
+    "clean-dev-and-sync-datasets": "npm run clean-dev-dataset && npm run sync-datasets"
   },
   "dependencies": {
     "@sanity/base": "^2.0.0",

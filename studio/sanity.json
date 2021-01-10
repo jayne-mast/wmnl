@@ -19,6 +19,14 @@
     "dashboard-widget-netlify",
     "@sanity/vision"
   ],
+  "env": {
+    "development": {
+      "plugins": ["@sanity/vision"],
+      "api": {
+        "dataset": "development"
+      }
+    }
+  },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
