@@ -17,6 +17,7 @@ import link from './objects/link';
 import portableText from './objects/portableText';
 import simplePortableText from './objects/simplePortableText';
 import backgroundColor from './objects/backgroundColor';
+import partnerLogo from './objects/partnerLogo';
 
 // Landing page sections
 import hero from './objects/hero';
@@ -43,6 +44,7 @@ export default createSchema({
     textSection,
     blogSection,
     blogPost,
-    backgroundColor
+    backgroundColor,
+    partnerLogo
   ])
 });

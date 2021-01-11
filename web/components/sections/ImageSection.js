@@ -20,6 +20,10 @@ function ImageSection(props) {
     color: getColorFromBgColor(backgroundColor),
   };
 
+  const imagePositionStyle = {
+    order: imagePosition === 'left' ? 0 : 1,
+  };
+
   return (
     <div className={styles.root} style={style}>
       <figure className={styles.content}>
@@ -27,12 +31,15 @@ function ImageSection(props) {
           src={builder.image(image).auto('format').width(2000).url()}
           className={styles.image}
           alt={alt}
+          style={imagePositionStyle}
         />
         <figcaption>
-          <div className={styles.caption}>
-            <h2 className={styles.title}>{heading}</h2>
-            {text && <SimpleBlockContent blocks={text} />}
-          </div>
+          <h2 className={styles.title}>{heading}</h2>
+          {text && (
+            <div className={styles.text}>
+              <SimpleBlockContent blocks={text} />
+            </div>
+          )}
         </figcaption>
       </figure>
     </div>

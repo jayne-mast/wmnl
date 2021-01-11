@@ -17,6 +17,14 @@ export default {
       name: 'backgroundColor',
       type: 'backgroundColor',
       title: 'Background color'
+    },
+    {
+      name: 'textPosition',
+      type: 'string',
+      title: 'Text position',
+      options: {
+        list: ['center', 'left', 'right', 'full width']
+      }
     }
   ],
   preview: {

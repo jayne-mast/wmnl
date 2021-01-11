@@ -3,6 +3,10 @@
 
 .root {
   padding: 2rem 0;
+  max-width: var(--width-medium);
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
 
   @media (--media-min-medium) {
     padding: 4rem 0;
@@ -11,10 +15,8 @@
 
 .article {
   width: 100%;
-  max-width: var(--width-small);
-  margin: 0 auto;
   padding: 0 1.5rem;
-  box-sizing: border-box;
+  max-width: var(--width-small);
 }
 
 .heading {

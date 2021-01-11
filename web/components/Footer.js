@@ -4,32 +4,25 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import styles from './Footer.module.css';
 import SimpleBlockContent from './SimpleBlockContent';
+import imageUrlBuilder from '@sanity/image-url';
+import client from '../client';
+
+const builder = imageUrlBuilder(client);
 
 function Footer(props) {
-  const { navItems, text, router } = props;
+  const { partnerLogos, text, router } = props;
   return (
     <div className={styles.root}>
       <nav>
         <ul className={styles.items}>
-          {navItems &&
-            navItems.map((item) => {
-              const isActive =
-                router.pathname === '/LandingPage' && router.query.slug === item.slug.current;
-              return (
-                <li key={item._id} className={styles.item}>
-                  <Link
-                    href={{
-                      pathname: '/LandingPage',
-                      query: { slug: item.slug.current },
-                    }}
-                    as={`/${item.slug.current}`}
-                    prefetch
-                  >
-                    <a data-is-active={isActive ? 'true' : 'false'}>{item.title}</a>
-                  </Link>
-                </li>
-              );
-            })}
+          {partnerLogos &&
+            partnerLogos.map(({ _key, link, asset, name }) => (
+              <li key={_key} className={styles.item}>
+                <a href={link} target="_blank">
+                  <img src={builder.image(asset).auto('format').height(60).url()} alt={name} />
+                </a>
+              </li>
+            ))}
         </ul>
       </nav>
       <div className={styles.text}>
@@ -43,14 +36,7 @@ function Footer(props) {
 }
 
 Footer.propTypes = {
-  navItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      slug: PropTypes.shape({
-        current: PropTypes.string,
-      }).isRequired,
-    })
-  ),
+  partnerLogos: PropTypes.arrayOf(PropTypes.object),
   text: PropTypes.arrayOf(PropTypes.object),
   router: PropTypes.shape({
     pathname: PropTypes.string,
