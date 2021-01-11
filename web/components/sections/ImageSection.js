@@ -33,7 +33,7 @@ function ImageSection(props) {
           alt={alt}
           style={imagePositionStyle}
         />
-        <figcaption>
+        <figcaption className={styles.figcaption}>
           <h2 className={styles.title}>{heading}</h2>
           {text && (
             <div className={styles.text}>

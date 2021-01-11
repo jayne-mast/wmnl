@@ -19,16 +19,17 @@
   position: relative;
   max-width: var(--width-medium);
 
-  @nest & > * {
-    width: 50%;
-    box-sizing: border-box;
-    padding: 0 1.5rem;
-  }
-
   @media (--media-min-medium) {
     display: flex;
     margin: 0 auto;
     padding: 0 1.5rem;
+
+    @nest & > * {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 1.5rem;
+      align-self: flex-start;
+    }
   }
 }
 
@@ -43,5 +44,12 @@
 .text {
   @media (--media-min-medium) {
     font-size: 20px;
+  }
+}
+
+.figcaption {
+  margin-top: 1.5rem;
+  @media (--media-min-medium) {
+    margin-top: 0;
   }
 }
