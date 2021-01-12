@@ -26,7 +26,7 @@ function Footer(props) {
         </ul>
       </nav>
       <div className={styles.text}>
-        Made with{' '}
+        Structured content powered by{' '}
         <a href="https://sanity.io" target="_blank">
           Sanity.io
         </a>
