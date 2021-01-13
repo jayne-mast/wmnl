@@ -14,14 +14,10 @@ export default {
         { title: 'Quote', value: 'blockquote' }
       ],
       marks: {
-        decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
-          { title: 'Code', value: 'code' }
-        ],
+        decorators: [{ title: 'Strong', value: 'strong' }, { title: 'Emphasis', value: 'em' }],
         annotations: [{ type: 'link' }, { type: 'internalLink' }]
       }
     },
     { type: 'figure' }
   ]
-}
+};
