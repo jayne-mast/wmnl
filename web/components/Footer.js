@@ -26,10 +26,13 @@ function Footer(props) {
         </ul>
       </nav>
       <div className={styles.text}>
-        Structured content powered by{' '}
-        <a href="https://sanity.io" target="_blank">
-          Sanity.io
-        </a>
+        {text && <SimpleBlockContent blocks={text} />}
+        <p>
+          Structured content powered by{' '}
+          <a href="https://sanity.io" target="_blank">
+            Sanity.io
+          </a>
+        </p>
       </div>
     </div>
   );

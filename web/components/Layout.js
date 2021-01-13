@@ -15,7 +15,7 @@ function Layout(props) {
     return <div>Missing config</div>;
   }
 
-  const { title, mainNavigation, partnerLogos, logo, url } = config;
+  const { title, mainNavigation, partnerLogos, logo, url, footerText } = config;
   const logoUrl = logo && logo.asset && logo.asset.url;
 
   return (
@@ -26,7 +26,7 @@ function Layout(props) {
       <div className={styles.container}>
         <Header title={title} navItems={mainNavigation} logo={logo} />
         <div className="content">{children}</div>
-        <Footer partnerLogos={partnerLogos} />
+        <Footer partnerLogos={partnerLogos} text={footerText} />
         {logoUrl && url && <LogoJsonLd url={url} logo={logoUrl} />}
       </div>
     </>
@@ -45,6 +45,7 @@ Layout.propTypes = {
       }),
     }),
     url: PropTypes.string,
+    footerText: PropTypes.arrayOf(PropTypes.object),
   }),
 };
 

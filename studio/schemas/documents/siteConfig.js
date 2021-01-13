@@ -81,6 +81,12 @@ export default {
           type: 'partnerLogo'
         }
       ]
+    },
+    {
+      name: 'footerText',
+      title: 'Text',
+      type: 'simplePortableText',
+      fieldset: 'footer'
     }
   ]
 };
