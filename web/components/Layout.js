@@ -18,11 +18,21 @@ function Layout(props) {
   const { title, mainNavigation, partnerLogos, logo, url, footerText } = config;
   const logoUrl = logo && logo.asset && logo.asset.url;
 
+  const analyticsCode = 'G-0647Z46SLK';
+
   return (
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width, viewport-fit=cover" />
       </Head>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsCode}`}></script>
+      <script>{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '${analyticsCode}');
+      `}</script>
       <div className={styles.container}>
         <Header title={title} navItems={mainNavigation} logo={logo} />
         <div className="content">{children}</div>
