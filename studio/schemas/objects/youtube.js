@@ -7,7 +7,6 @@ const Preview = ({ value }) => {
   if (!url) {
     return null;
   }
-  console.log(url, getVideoId);
   const { id } = getVideoId(url);
   return <YouTube videoId={id} />;
 };

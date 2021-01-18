@@ -20,6 +20,7 @@ import backgroundColor from './objects/backgroundColor';
 import partnerLogo from './objects/partnerLogo';
 import youtube from './objects/youtube';
 import vimeo from './objects/vimeo';
+import routeWithChildren from './objects/routeWithChildren';
 
 // Landing page sections
 import hero from './objects/hero';
@@ -41,6 +42,7 @@ export default createSchema({
     page,
     portableText,
     route,
+    routeWithChildren,
     simplePortableText,
     siteConfig,
     textSection,

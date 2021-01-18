@@ -16,6 +16,7 @@ function Layout(props) {
   }
 
   const { title, mainNavigation, partnerLogos, logo, url, footerText } = config;
+
   const logoUrl = logo && logo.asset && logo.asset.url;
 
   const analyticsCode = 'G-0647Z46SLK';

@@ -92,7 +92,8 @@ class Header extends Component {
             <nav className={styles.nav}>
               <ul className={styles.navItems}>
                 {navItems.map((item) => {
-                  const { slug, title, _id } = item;
+                  const { slug, title, _id } = item.page || item;
+
                   const isActive =
                     router.pathname === '/LandingPage' && router.query.slug === slug.current;
                   return (
