@@ -27,7 +27,9 @@ export default {
       const subtitle = slug === '/' ? '/' : `/${slug}`;
       return {
         title,
-        subtitle: `${subtitle} (${children.length} ${children.length === 1 ? 'child' : 'children'})`
+        subtitle: `${subtitle} (${children ? children.length : 0} ${
+          children && children.length === 1 ? 'child' : 'children'
+        })`
       };
     }
   }
