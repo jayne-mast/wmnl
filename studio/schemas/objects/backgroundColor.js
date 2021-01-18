@@ -12,6 +12,10 @@ export default {
       {
         title: 'Blue',
         value: '#030059'
+      },
+      {
+        title: 'White',
+        value: '#ffffff'
       }
     ]
   }
