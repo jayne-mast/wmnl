@@ -18,6 +18,8 @@ import portableText from './objects/portableText';
 import simplePortableText from './objects/simplePortableText';
 import backgroundColor from './objects/backgroundColor';
 import partnerLogo from './objects/partnerLogo';
+import youtube from './objects/youtube';
+import vimeo from './objects/vimeo';
 
 // Landing page sections
 import hero from './objects/hero';
@@ -45,6 +47,8 @@ export default createSchema({
     blogSection,
     blogPost,
     backgroundColor,
-    partnerLogo
+    partnerLogo,
+    youtube,
+    vimeo
   ])
 });

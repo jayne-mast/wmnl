@@ -1,3 +1,5 @@
+import { FaYoutube, FaVimeo } from 'react-icons/fa';
+
 export default {
   title: 'Portable Text',
   name: 'portableText',
@@ -18,6 +20,8 @@ export default {
         annotations: [{ type: 'link' }, { type: 'internalLink' }]
       }
     },
-    { type: 'figure' }
+    { type: 'figure' },
+    { type: 'youtube', icon: FaYoutube },
+    { type: 'vimeo', icon: FaVimeo }
   ]
 };
