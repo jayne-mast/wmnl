@@ -7,6 +7,13 @@ const serializers = {
     youtube: VideoEmbed,
     vimeo: VideoEmbed,
   },
+  marks: {
+    internalLink: ({ mark, children }) => {
+      const { slug = {} } = mark;
+      const href = `/${slug.current}`;
+      return <a href={href}>{children}</a>;
+    },
+  },
 };
 
 export default serializers;
