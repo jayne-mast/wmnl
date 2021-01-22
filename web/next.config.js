@@ -68,7 +68,7 @@ module.exports = withCSS({
       const { routes = [] } = res;
       const nextRoutes = {
         // Routes imported from sanity
-        ...routes.filter(({ slug }) => slug.current).reduce(reduceRoutes, {}),
+        ...routes.filter(({ slug }) => slug && slug.current).reduce(reduceRoutes, {}),
       };
       console.log(nextRoutes);
       return nextRoutes;
