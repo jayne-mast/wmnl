@@ -10,6 +10,9 @@ const serializers = {
   marks: {
     internalLink: ({ mark, children }) => {
       const { slug = {} } = mark;
+      if (!slug.current) {
+        return children;
+      }
       const href = `/${slug.current}`;
       return <a href={href}>{children}</a>;
     },

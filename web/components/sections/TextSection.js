@@ -17,21 +17,20 @@ function TextSection(props) {
 
   switch (textPosition) {
     case 'left':
-      style['text-align'] = 'left';
+      style['textAlign'] = 'left';
       break;
     case 'right':
-      style['text-align'] = 'right';
-      style['justify-content'] = 'flex-end';
+      style['textAlign'] = 'right';
+      style['justifyContent'] = 'flex-end';
       break;
     case 'center':
-      style['text-align'] = 'center';
-      style['justify-content'] = 'center';
+      style['textAlign'] = 'center';
+      style['justifyContent'] = 'center';
       break;
     case 'full width':
-      style['text-align'] = 'left';
-      articleStyle['font-size'] = '20px';
-      articleStyle['max-width'] = '100%';
-
+      style['textAlign'] = 'left';
+      articleStyle['fontSize'] = '20px';
+      articleStyle['maxWidth'] = '100%';
       break;
   }
 
