@@ -94,6 +94,10 @@ class Header extends Component {
                 {navItems.map(({ page }) => {
                   const { slug, title, _id } = page;
 
+                  if (!slug) {
+                    return null;
+                  }
+
                   const isActive =
                     router.pathname === '/LandingPage' && router.query.slug === slug.current;
                   return (
