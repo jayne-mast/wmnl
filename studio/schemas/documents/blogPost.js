@@ -1,7 +1,10 @@
+import { MdLibraryBooks } from 'react-icons/md';
+
 export default {
   name: 'blogPost',
   type: 'document',
-  title: 'Blog post',
+  title: 'Magazine items',
+  icon: MdLibraryBooks,
   fieldsets: [
     {
       title: 'SEO & metadata',
@@ -19,7 +22,7 @@ export default {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
-      description: 'This will be what comes after /blog/ in the url',
+      description: 'This will be what comes after /magazine/ in the url',
       validation: Rule => Rule.required(),
       options: {
         source: 'title'
@@ -74,7 +77,7 @@ export default {
     prepare({ title = 'No title', slug, media }) {
       return {
         title,
-        subtitle: slug && '/blog/' + slug,
+        subtitle: slug && '/magazine/' + slug,
         media
       };
     }
