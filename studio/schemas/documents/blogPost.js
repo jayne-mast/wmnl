@@ -19,10 +19,16 @@ export default {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
+      description: 'This will be what comes after /blog/ in the url',
       validation: Rule => Rule.required(),
       options: {
         source: 'title'
       }
+    },
+    {
+      title: 'Author',
+      name: 'author',
+      type: 'string'
     },
     {
       title: 'Publish(ed) at',
