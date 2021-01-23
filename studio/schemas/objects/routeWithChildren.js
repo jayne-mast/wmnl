@@ -14,7 +14,7 @@ export default {
       title: 'Children',
       name: 'children',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'route' } }]
+      of: [{ type: 'reference', to: { type: 'route' }, title: 'Child' }]
     }
   ],
   preview: {

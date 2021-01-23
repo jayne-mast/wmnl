@@ -63,7 +63,7 @@ export default {
         Rule.unique().error('You have duplicate menu items')
       ],
       type: 'array',
-      of: [{ type: 'routeWithChildren' }]
+      of: [{ type: 'routeWithChildren', title: 'Main navigation' }]
     },
     {
       title: 'Partner logos',
