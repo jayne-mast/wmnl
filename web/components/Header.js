@@ -101,8 +101,8 @@ class Header extends Component {
           {navItems && (
             <nav className={styles.nav}>
               <ul className={styles.navItems}>
-                {navItems.map(({ page, children }) => {
-                  const { slug, title, _id } = page;
+                {navItems.map(({ page, children, _key }) => {
+                  const { slug, title } = page;
 
                   if (!slug) {
                     return null;
@@ -112,7 +112,7 @@ class Header extends Component {
                     router.pathname === '/LandingPage' && router.query.slug === slug.current;
 
                   return (
-                    <li key={_id} className={styles.navItem}>
+                    <li key={_key} className={styles.navItem}>
                       <Link
                         href={{
                           pathname: '/LandingPage',

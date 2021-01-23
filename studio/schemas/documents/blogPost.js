@@ -7,7 +7,7 @@ export default {
   icon: MdLibraryBooks,
   fieldsets: [
     {
-      title: 'SEO & metadata',
+      title: 'Preview',
       name: 'metadata'
     }
   ],
@@ -33,18 +33,18 @@ export default {
       name: 'author',
       type: 'string'
     },
-    {
-      title: 'Publish(ed) at',
-      name: 'publishAt',
-      type: 'datetime',
-      validation: Rule => Rule.required(),
-      options: {
-        dateFormat: 'DD-MM-YYYY',
-        timeFormat: 'HH:mm',
-        timeStep: 15,
-        calendarTodayLabel: 'Today'
-      }
-    },
+    // {
+    //   title: 'Publish(ed) at',
+    //   name: 'publishAt',
+    //   type: 'datetime',
+    //   validation: Rule => Rule.required(),
+    //   options: {
+    //     dateFormat: 'DD-MM-YYYY',
+    //     timeFormat: 'HH:mm',
+    //     timeStep: 15,
+    //     calendarTodayLabel: 'Today'
+    //   }
+    // },
     {
       name: 'content',
       type: 'array',
@@ -54,16 +54,17 @@ export default {
     {
       name: 'description',
       type: 'text',
-      title: 'Description',
+      title: 'Preview description',
       description:
-        'This description populates meta-tags on the webpage, used in sharing previews and Google search results.',
+        'This description will show up in the blog post overview, and with sharing previews on social media.',
       fieldset: 'metadata'
     },
     {
       name: 'openGraphImage',
       type: 'image',
-      title: 'Open Graph Image',
-      description: 'Image for sharing previews on Facebook, Twitter etc.',
+      title: 'Preview image',
+      description:
+        'This image will be used in the blog post overview, and is the image for sharing previews on Facebook, Twitter etc.',
       fieldset: 'metadata'
     }
   ],

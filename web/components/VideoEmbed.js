@@ -40,5 +40,7 @@ export default function VideoEmbed({ node }) {
 }
 
 VideoEmbed.propTypes = {
-  url: PropTypes.string.isRequired,
+  node: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+  }).isRequired,
 };

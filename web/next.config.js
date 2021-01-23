@@ -40,7 +40,7 @@ const reduceRoutes = (obj, route) => {
 
   if (route._type === 'blogPost') {
     const path = `/magazine/${route['slug']['current']}`;
-    const { _createdAt, _updatedAt, publishAt } = route;
+    const { _createdAt, _updatedAt } = route;
 
     obj[path] = {
       query: {

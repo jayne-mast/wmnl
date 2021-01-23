@@ -16,8 +16,8 @@ export default {
     prepare({ heading }) {
       return {
         title: `${heading}`,
-        subtitle: 'Blog section'
-      }
+        subtitle: 'Blog overview'
+      };
     }
   }
-}
+};
