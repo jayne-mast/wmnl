@@ -68,7 +68,15 @@ export default {
   preview: {
     select: {
       title: 'title',
+      slug: 'slug.current',
       media: 'openGraphImage'
+    },
+    prepare({ title = 'No title', slug, media }) {
+      return {
+        title,
+        subtitle: slug && '/blog/' + slug,
+        media
+      };
     }
   }
 };
