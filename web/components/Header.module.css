@@ -99,6 +99,12 @@
   display: flex;
   white-space: nowrap;
   line-height: calc(var(--font-base-line-height) * 1.5rem);
+  position: relative;
+  flex-direction: column;
+
+  @nest &:hover ul {
+    display: block;
+  }
 
   @nest & > a {
     padding: 1.2rem 0.5rem 0.8rem;
@@ -106,7 +112,6 @@
     @media (--media-max-medium) {
       padding: 1.2rem 1.5rem 0.8rem;
       box-sizing: border-box;
-      text-align: right;
 
       @nest &[data-is-active='true']::before {
         content: '';
@@ -152,5 +157,36 @@
 
   @media (--media-min-medium) {
     display: none;
+  }
+}
+
+.subNav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 1.5rem;
+
+  @media (--media-min-medium) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin: 0;
+    background: var(--color-primary);
+    color: var(--color-accent);
+    display: none;
+  }
+
+  @nest & > li {
+    margin: 0;
+
+    @nest & > a {
+      padding: 0.3rem 1.3rem;
+
+      @media (--media-min-medium) {
+        padding: 0.8rem 1.3rem;
+        @nest &:hover {
+          background: var(--color-primary-light);
+        }
+      }
+    }
   }
 }

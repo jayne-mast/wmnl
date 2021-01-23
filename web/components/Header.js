@@ -20,10 +20,20 @@ class Header extends Component {
     title: PropTypes.string,
     navItems: PropTypes.arrayOf(
       PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        slug: PropTypes.shape({
-          current: PropTypes.string,
-        }).isRequired,
+        page: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          slug: PropTypes.shape({
+            current: PropTypes.string,
+          }).isRequired,
+        }),
+        children: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            slug: PropTypes.shape({
+              current: PropTypes.string,
+            }).isRequired,
+          })
+        ),
       })
     ),
     logo: PropTypes.shape({
@@ -91,7 +101,7 @@ class Header extends Component {
           {navItems && (
             <nav className={styles.nav}>
               <ul className={styles.navItems}>
-                {navItems.map(({ page }) => {
+                {navItems.map(({ page, children }) => {
                   const { slug, title, _id } = page;
 
                   if (!slug) {
@@ -100,6 +110,7 @@ class Header extends Component {
 
                   const isActive =
                     router.pathname === '/LandingPage' && router.query.slug === slug.current;
+
                   return (
                     <li key={_id} className={styles.navItem}>
                       <Link
@@ -112,6 +123,26 @@ class Header extends Component {
                       >
                         <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
                       </Link>
+                      {children && (
+                        <ul className={styles.subNav}>
+                          {children.map(({ slug, title, _id }) => {
+                            return (
+                              <li key={_id} className={styles.navItem}>
+                                <Link
+                                  href={{
+                                    pathname: '/LandingPage',
+                                    query: { slug: slug.current },
+                                  }}
+                                  as={`/${slug.current}`}
+                                  prefetch
+                                >
+                                  <a>{title}</a>
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
                     </li>
                   );
                 })}
