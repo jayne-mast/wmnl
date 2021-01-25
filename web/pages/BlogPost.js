@@ -7,6 +7,7 @@ import NextSeo from 'next-seo';
 import imageUrlBuilder from '@sanity/image-url';
 import RenderSections from '../components/RenderSections';
 
+const builder = imageUrlBuilder(client);
 const pageQuery = groq`
 *[_type == "blogPost" && slug.current == $slug][0]{
   ...,
@@ -50,7 +51,6 @@ class BlogPost extends React.Component {
       slug,
       author,
     } = this.props;
-    console.log(this.props);
 
     const openGraphImages = openGraphImage
       ? [

@@ -11,6 +11,9 @@
   @media (--media-min-medium) {
     padding: 4rem 0;
   }
+  @nest & a {
+    color: inherit;
+  }
 }
 
 .article {

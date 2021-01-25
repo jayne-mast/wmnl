@@ -9,13 +9,16 @@ import RenderSections from '../components/RenderSections';
 
 const builder = imageUrlBuilder(client);
 const pageQuery = groq`
-*[_type == "route" && slug.current == $slug][0]{
-  page-> {
-    ...,
-    content[] {
+{
+  "pageData": *[_type == "route" && slug.current == $slug][0]{
+    page-> {
       ...,
+      content[] {
+        ...,
+      }
     }
-  }
+	},
+	"blogs": *[_type == "blogPost"]
 }
 `;
 
@@ -23,12 +26,12 @@ class LandingPage extends Component {
   static propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
-    // TODO: improve types
-    disallowRobots: PropTypes.any,
-    openGraphImage: PropTypes.any,
-    content: PropTypes.any,
-    config: PropTypes.any,
-    slug: PropTypes.any,
+    disallowRobots: PropTypes.bool,
+    openGraphImage: PropTypes.object,
+    content: PropTypes.array,
+    config: PropTypes.object,
+    slug: PropTypes.string,
+    blogs: PropTypes.array,
   };
 
   static async getInitialProps({ query }) {
@@ -37,27 +40,9 @@ class LandingPage extends Component {
       console.error('no query');
       return;
     }
-    if (slug && slug !== '/') {
-      return client.fetch(pageQuery, { slug }).then((res) => ({ ...res.page, slug }));
-    }
-
-    // Frontpage
-    if (slug && slug === '/') {
-      return client
-        .fetch(
-          groq`
-        *[_id == "global-config"][0]{
-          frontpage -> {
-            ...,
-            content[] {
-              ...,
-            }
-          }
-        }
-      `
-        )
-        .then((res) => ({ ...res.frontpage, slug }));
-    }
+    return client
+      .fetch(pageQuery, { slug })
+      .then((res) => ({ ...res.pageData.page, slug, blogs: res.blogs }));
 
     return null;
   }
@@ -71,6 +56,7 @@ class LandingPage extends Component {
       content = [],
       config = {},
       slug,
+      blogs,
     } = this.props;
 
     const openGraphImages = openGraphImage
@@ -112,7 +98,7 @@ class LandingPage extends Component {
             noindex: disallowRobots,
           }}
         />
-        {content && <RenderSections sections={content} />}
+        {content && <RenderSections sections={content} blogs={blogs} />}
       </Layout>
     );
   }

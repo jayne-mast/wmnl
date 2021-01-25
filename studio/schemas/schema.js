@@ -26,7 +26,7 @@ import routeWithChildren from './objects/routeWithChildren';
 import hero from './objects/hero';
 import imageSection from './objects/imageSection';
 import textSection from './objects/textSection';
-import blogSection from './objects/blogSection';
+import blogOverviewSection from './objects/blogOverviewSection';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -46,7 +46,7 @@ export default createSchema({
     simplePortableText,
     siteConfig,
     textSection,
-    blogSection,
+    blogOverviewSection,
     blogPost,
     backgroundColor,
     partnerLogo,

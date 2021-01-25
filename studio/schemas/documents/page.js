@@ -22,8 +22,8 @@ export default {
       of: [
         { type: 'hero' },
         { type: 'imageSection' },
-        { type: 'textSection' }
-        // { type: 'blogSection' }
+        { type: 'textSection' },
+        { type: 'blogOverviewSection' }
       ]
     },
     {
