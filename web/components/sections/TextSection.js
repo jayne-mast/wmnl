@@ -8,11 +8,12 @@ import { propTypes } from '@sanity/block-content-to-react';
 function TextSection(props) {
   const { heading, text, backgroundColor, textPosition = 'center' } = props;
 
-  const style = {
+  const bgStyle = {
     backgroundColor,
     color: getColorFromBgColor(backgroundColor),
   };
 
+  const style = {};
   const articleStyle = {};
 
   switch (textPosition) {
@@ -35,11 +36,13 @@ function TextSection(props) {
   }
 
   return (
-    <div className={styles.root} style={style}>
-      <section className={styles.article} style={articleStyle}>
-        <h2 className={styles.heading}>{heading}</h2>
-        {text && <SimpleBlockContent blocks={text} />}
-      </section>
+    <div style={bgStyle}>
+      <div className={styles.root} style={style}>
+        <section className={styles.article} style={articleStyle}>
+          <h2 className={styles.heading}>{heading}</h2>
+          {text && <SimpleBlockContent blocks={text} />}
+        </section>
+      </div>
     </div>
   );
 }
