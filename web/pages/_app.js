@@ -8,6 +8,15 @@ import '../styles/layout.css';
 const siteConfigQuery = `
   *[_id == "global-config"] {
     ...,
+    footerText[] {
+      ...,
+      markDefs[]{
+        ...,
+        _type == "internalLink" => {
+          "slug": @->slug
+        }
+      }
+    },
     logo {asset->{extension, url}},
     mainNavigation[] {
       ...,
@@ -20,6 +29,7 @@ const siteConfigQuery = `
         "title": page->title
       }
     },
+
   }[0]
   `;
 

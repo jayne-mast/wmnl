@@ -10,7 +10,6 @@ import { getColorFromBgColor } from '../../utils';
 const builder = imageUrlBuilder(client);
 
 function BlogSection({ heading, text, blogs, backgroundColor, itemsToShow = Infinity }) {
-  console.log(backgroundColor);
   const style = {
     backgroundColor,
     color: getColorFromBgColor(backgroundColor),

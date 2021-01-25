@@ -13,6 +13,15 @@ const pageQuery = groq`
   ...,
   content[] {
     ...,
+    text[] {
+      ...,
+      markDefs[]{
+        ...,
+        _type == "internalLink" => {
+          "slug": @->slug
+        }
+      }
+    },
   }
 }
 `;

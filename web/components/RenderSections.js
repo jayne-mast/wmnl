@@ -16,8 +16,6 @@ function resolveSections(section) {
 }
 
 function RenderSections({ sections, blogs }) {
-  console.log(blogs);
-
   if (!sections) {
     console.error('Missing section');
     return <div>Missing sections</div>;
