@@ -27,7 +27,7 @@ const pageQuery = groq`
       }
     }
 	},
-	"blogs": *[_type == "blogPost"]
+	"blogs": *[_type == "blogPost" && !(_id in path("drafts.**"))]
 }
 `;
 
