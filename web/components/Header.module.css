@@ -171,6 +171,7 @@
     right: 0;
     margin: 0;
     background: var(--color-primary);
+    border: solid 2px var(--color-accent);
     color: var(--color-accent);
     display: none;
   }
