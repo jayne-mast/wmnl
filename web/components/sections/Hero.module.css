@@ -17,6 +17,7 @@
 .title {
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
+  font-weight: 900;
 
   @media (--media-min-medium) {
     font-size: var(--font-title1-size);

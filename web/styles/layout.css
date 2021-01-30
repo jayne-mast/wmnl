@@ -10,7 +10,6 @@ body {
   -webkit-font-smoothing: antialiased;
   background: var(--color-white);
   color: var(--color-accent);
-  font-weight: 500;
   margin: 0;
   font-size: 18px;
 }
