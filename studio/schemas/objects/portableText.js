@@ -1,4 +1,5 @@
-import { FaYoutube, FaVimeo } from 'react-icons/fa';
+import React from 'react';
+import { FaYoutube, FaVimeo, FaDonate } from 'react-icons/fa';
 
 export default {
   title: 'Portable Text',
@@ -22,6 +23,10 @@ export default {
     },
     { type: 'figure' },
     { type: 'youtube', icon: FaYoutube },
-    { type: 'vimeo', icon: FaVimeo }
+    { type: 'vimeo', icon: FaVimeo },
+    {
+      type: 'donorbox',
+      icon: FaDonate
+    }
   ]
 };

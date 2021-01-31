@@ -1,0 +1,8 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.box {
+  max-width: 500px;
+  min-width: 250px;
+  max-height: none !important;
+}

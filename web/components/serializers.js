@@ -1,3 +1,5 @@
+import React from 'react';
+import Donorbox from './Donorbox';
 import Figure from './Figure';
 import VideoEmbed from './VideoEmbed';
 
@@ -6,6 +8,7 @@ const serializers = {
     figure: Figure,
     youtube: VideoEmbed,
     vimeo: VideoEmbed,
+    donorbox: Donorbox,
   },
   marks: {
     internalLink: ({ mark, children }) => {

@@ -20,6 +20,7 @@ import backgroundColor from './objects/backgroundColor';
 import partnerLogo from './objects/partnerLogo';
 import youtube from './objects/youtube';
 import vimeo from './objects/vimeo';
+import donorbox from './objects/donorbox';
 import routeWithChildren from './objects/routeWithChildren';
 
 // Landing page sections
@@ -51,6 +52,7 @@ export default createSchema({
     backgroundColor,
     partnerLogo,
     youtube,
-    vimeo
+    vimeo,
+    donorbox
   ])
 });
