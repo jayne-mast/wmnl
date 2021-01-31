@@ -39,7 +39,7 @@ function TextSection(props) {
     <div style={bgStyle}>
       <div className={styles.root} style={style}>
         <section className={styles.article} style={articleStyle}>
-          <h2 className={styles.heading}>{heading}</h2>
+          {heading <h2 className={styles.heading}>{heading}</h2>}
           {text && <SimpleBlockContent blocks={text} />}
         </section>
       </div>

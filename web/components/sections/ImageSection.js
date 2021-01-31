@@ -34,7 +34,7 @@ function ImageSection(props) {
           style={imagePositionStyle}
         />
         <figcaption className={styles.figcaption}>
-          <h2 className={styles.title}>{heading}</h2>
+          {heading && <h2 className={styles.title}>{heading}</h2>}
           {text && (
             <div className={styles.text}>
               <SimpleBlockContent blocks={text} />

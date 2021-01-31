@@ -22,17 +22,25 @@ function Hero(props) {
 
   return (
     <div className={styles.root} style={style}>
-      <div className={styles.imageWrapper}>
-        <img
-          src={builder.image(image).auto('format').width(2000).url()}
-          className={styles.image}
-          alt={alt}
-        />
-      </div>
-      <div className={styles.content}>
-        <h1 className={styles.title}>{heading}</h1>
-        <div className={styles.text}>{text && <SimpleBlockContent blocks={text} />}</div>
-      </div>
+      {image && (
+        <div className={styles.imageWrapper}>
+          <img
+            src={builder.image(image).auto('format').width(2000).url()}
+            className={styles.image}
+            alt={alt}
+          />
+        </div>
+      )}
+      {(heading || text) && (
+        <div className={styles.content}>
+          {heading && <h1 className={styles.title}>{heading}</h1>}
+          {text && (
+            <div className={styles.text}>
+              <SimpleBlockContent blocks={text} />
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
