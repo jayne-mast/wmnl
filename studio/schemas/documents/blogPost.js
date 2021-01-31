@@ -53,7 +53,8 @@ export default {
         { type: 'hero' },
         { type: 'imageSection' },
         { type: 'textSection' },
-        { type: 'blogOverviewSection' }
+        { type: 'blogOverviewSection' },
+        { type: 'imageColumns' }
       ]
     },
     {

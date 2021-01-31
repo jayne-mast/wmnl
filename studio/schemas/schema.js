@@ -21,11 +21,13 @@ import partnerLogo from './objects/partnerLogo';
 import youtube from './objects/youtube';
 import vimeo from './objects/vimeo';
 import donorbox from './objects/donorbox';
+import imageColumnsSection from './objects/imageColumnsSection';
 import routeWithChildren from './objects/routeWithChildren';
 
 // Landing page sections
 import hero from './objects/hero';
 import imageSection from './objects/imageSection';
+import imageColumns from './objects/imageColumns';
 import textSection from './objects/textSection';
 import blogOverviewSection from './objects/blogOverviewSection';
 
@@ -38,6 +40,8 @@ export default createSchema({
     figure,
     hero,
     imageSection,
+    imageColumns,
+    imageColumnsSection,
     internalLink,
     link,
     page,

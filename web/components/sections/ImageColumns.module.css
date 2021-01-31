@@ -1,0 +1,85 @@
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
+
+.root {
+  position: relative;
+  padding: 2rem 0;
+
+  @media (--media-min-medium) {
+    padding: 4rem 0;
+  }
+  @nest & a {
+    color: inherit;
+  }
+}
+
+.content {
+  position: relative;
+  max-width: var(--width-medium);
+
+  @media (--media-min-large) {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    @nest & > * {
+      width: 50%;
+      box-sizing: border-box;
+      padding-right: 1.5rem;
+      align-self: flex-start;
+    }
+  }
+}
+
+.figure {
+  margin: 0 2rem;
+
+  @media (--media-min-medium) {
+    display: flex;
+    margin: 0 2rem 2rem;
+
+    @nest & > * {
+      box-sizing: border-box;
+      padding-right: 1.5rem;
+      align-self: flex-start;
+    }
+    @media (--media-min-large) {
+      margin: 0 0 2rem;
+    }
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  @media (--media-min-medium) {
+    margin-bottom: 0;
+    width: 45%;
+  }
+}
+
+.title {
+  margin-top: 0;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  @media (--media-min-large) {
+    padding: 0;
+    font-size: var(--font-title2-size);
+    line-height: var(--font-title2-line-height);
+  }
+}
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  @media (--media-min-medium) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+.figcaption {
+  padding: 0;
+  margin: 0;
+}

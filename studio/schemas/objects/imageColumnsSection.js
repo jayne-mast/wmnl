@@ -1,6 +1,6 @@
 export default {
   type: 'object',
-  name: 'imageSection',
+  name: 'imageColumnsSection',
   title: 'Image with text',
   fields: [
     {
@@ -26,19 +26,6 @@ export default {
       type: 'string',
       title: 'Alternative text',
       description: 'Important for SEO and accessiblity.'
-    },
-    {
-      name: 'imagePosition',
-      type: 'string',
-      title: 'Image position',
-      options: {
-        list: ['left', 'right']
-      }
-    },
-    {
-      name: 'backgroundColor',
-      type: 'backgroundColor',
-      title: 'Background color'
     }
   ],
   preview: {
@@ -49,7 +36,6 @@ export default {
     prepare({ heading = 'No title', media }) {
       return {
         title: heading,
-        subtitle: 'Image section',
         media
       };
     }
