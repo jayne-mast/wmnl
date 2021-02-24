@@ -39,7 +39,6 @@ function Layout(props) {
       `,
         }}
       />
-      <!-- Facebook Pixel Code -->
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -52,11 +51,17 @@ function Layout(props) {
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js%27);
       fbq('init', '${facebookPixelCode}');
-      fbq('track', 'PageView');`}} />
-      <noscript><img height="1" width="1" style="display:none"
-      src={`https://www.facebook.com/tr?id=${facebookPixelCode}&ev=PageView&noscript=1`}
-      /></noscript>
-      <!-- End Facebook Pixel Code -->
+      fbq('track', 'PageView');`,
+        }}
+      />
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style="display:none"
+          src={`https://www.facebook.com/tr?id=${facebookPixelCode}&ev=PageView&noscript=1`}
+        />
+      </noscript>
       <div className={styles.container}>
         <Header title={title} navItems={mainNavigation} logo={logo} />
         <div className="content">{children}</div>
