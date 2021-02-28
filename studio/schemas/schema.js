@@ -23,6 +23,7 @@ import vimeo from './objects/vimeo';
 import donorbox from './objects/donorbox';
 import imageColumnsSection from './objects/imageColumnsSection';
 import routeWithChildren from './objects/routeWithChildren';
+import iframe from './objects/iframe';
 
 // Landing page sections
 import hero from './objects/hero';
@@ -57,6 +58,7 @@ export default createSchema({
     partnerLogo,
     youtube,
     vimeo,
-    donorbox
+    donorbox,
+    iframe
   ])
 });

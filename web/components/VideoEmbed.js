@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './VideoEmbed.module.css';
 import getVideoId from 'get-video-id';
 
-const { spacing } = styles;
-
 export default function VideoEmbed({ node }) {
   const { url } = node;
   if (!url) {

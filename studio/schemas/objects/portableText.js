@@ -24,6 +24,7 @@ export default {
     { type: 'figure' },
     { type: 'youtube', icon: FaYoutube },
     { type: 'vimeo', icon: FaVimeo },
+    { type: 'iframe' },
     {
       type: 'donorbox',
       icon: FaDonate
