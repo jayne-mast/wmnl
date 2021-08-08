@@ -10,12 +10,12 @@ import { getColorFromBgColor } from '../../utils';
 const builder = imageUrlBuilder(client);
 
 function BlogSection({ heading, text, blogs, backgroundColor, itemsToShow = Infinity }) {
+  const blogsToRender = blogs.slice(0, itemsToShow);
+
   const style = {
     backgroundColor,
     color: getColorFromBgColor(backgroundColor),
   };
-
-  const blogsToRender = blogs.slice(0, itemsToShow);
 
   return (
     <div className={styles.root} style={style}>
@@ -25,23 +25,15 @@ function BlogSection({ heading, text, blogs, backgroundColor, itemsToShow = Infi
         <div className={styles.blogs}>
           {blogsToRender.map(({ description, openGraphImage, slug, title }) => {
             const imgUrl = openGraphImage
-              ? builder.image(openGraphImage).width(160).height(160).url()
+              ? builder.image(openGraphImage).width(410).height(250).url()
               : null;
 
             return (
               <div className={styles.blog}>
-                {imgUrl && (
-                  <a href={`/magazine/${slug.current}`}>
-                    <img src={imgUrl} alt="" className={styles.blogImage} />
-                  </a>
-                )}
-                <div>
+                <a href={`/magazine/${slug.current}`} className={styles.blogLink}>
+                  {imgUrl && <img src={imgUrl} alt="" className={styles.blogImage} />}
                   <h3 className={styles.blogHeading}>{title}</h3>
-                  <p>{description}</p>
-                  <p className={styles.blogLinkWrapper}>
-                    <a href={`/magazine/${slug.current}`}>Lees meer</a>
-                  </p>
-                </div>
+                </a>
               </div>
             );
           })}
