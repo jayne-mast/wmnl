@@ -24,7 +24,7 @@ function resolveSections(section) {
     return Section;
   }
 
-  console.error('Cant find section', section); // eslint-disable-line no-console
+  console.error("Can't find section", section); // eslint-disable-line no-console
   return null;
 }
 
@@ -49,7 +49,7 @@ function RenderSections({ sections, blogs, author }) {
           return <div>Missing section {section._type}</div>;
         }
         if (i === 0 && author) {
-          if (section._type === 'Hero') {
+          if (section._type === 'hero') {
             return (
               <>
                 <SectionComponent {...section} key={section._key} blogs={blogs} />;
