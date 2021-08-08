@@ -86,19 +86,6 @@ class BlogPost extends React.Component {
         ]
       : [];
 
-    const smallWrapper = {
-      padding: '1rem 0 0',
-      maxWidth: 'var(--width-medium)',
-      boxSizing: 'border-box',
-      margin: '0 auto',
-      display: 'flex',
-    };
-    const smallStyle = {
-      width: '100%',
-      padding: '0 1.5rem',
-      maxWidth: 'var(--width-small)',
-    };
-
     return (
       <Layout config={config}>
         <NextSeo
@@ -113,12 +100,7 @@ class BlogPost extends React.Component {
             noindex: false,
           }}
         />
-        {author && (
-          <div style={smallWrapper}>
-            <small style={smallStyle}>Geschreven door: {author}</small>
-          </div>
-        )}
-        {content && <RenderSections sections={content} />}
+        {content && <RenderSections sections={content} author={author} />}
       </Layout>
     );
   }
