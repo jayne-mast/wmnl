@@ -7,7 +7,7 @@
 
 .root {
   position: relative;
-  color: var(--color-primary, #fff);
+  color: var(--color-primary-old, #fff);
   display: flex;
   margin: 0 auto;
   padding: 0 1rem;
@@ -186,7 +186,7 @@
       @media (--media-min-medium) {
         padding: 0.8rem 1.3rem;
         @nest &:hover {
-          background: var(--color-primary-light);
+          background: var(--color-primary);
         }
       }
     }
