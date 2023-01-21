@@ -2,7 +2,8 @@
   --wide-container: 60rem;
   --narrow-container: 40rem;
 
-  --font-family-sans: Lato, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-sans: roc-grotesk, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-title: roc-grotesk-wide, -apple-system, BlinkMacSystemFont, sans-serif;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
@@ -12,7 +13,7 @@
   --color-white: #fff;
   --color-primary: #ff3d96;
   --color-primary-light: #fb5aa5;
-  --color-accent: #030059;
+  --color-accent: #5e1410;
 
   /* Typography */
   --unit: 16;
