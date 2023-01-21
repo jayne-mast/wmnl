@@ -11,7 +11,7 @@ export default {
       },
       {
         title: 'Light pink',
-        value: '#F3A5E2'
+        value: '#f3a5e2'
       },
       {
         title: 'Blue',
