@@ -23,11 +23,15 @@
 .heading {
   font-size: var(--font-title3-size);
   line-height: var(--font-title3-line-height);
+  font-family: var(--font-family-title);
+  font-weight: 500;
 }
 
 .blogHeading {
   font-size: var(--font-title4-size);
   line-height: var(--font-title4-line-height);
+  font-family: var(--font-family-title);
+  font-weight: 500;
   margin: 0.4em 0 0;
 }
 .blogs {

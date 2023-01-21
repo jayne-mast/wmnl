@@ -10,6 +10,10 @@ export default {
         value: '#ff3d96'
       },
       {
+        title: 'Light pink',
+        value: '#F3A5E2'
+      },
+      {
         title: 'Blue',
         value: '#030059'
       },

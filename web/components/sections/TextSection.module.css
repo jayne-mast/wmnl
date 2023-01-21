@@ -25,4 +25,6 @@
 .heading {
   font-size: var(--font-title3-size);
   line-height: var(--font-title3-line-height);
+  font-family: var(--font-family-title);
+  font-weight: 500;
 }
